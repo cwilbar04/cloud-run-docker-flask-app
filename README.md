@@ -4,6 +4,7 @@ Requirements:
 - Install and Run [Docker](https://docs.docker.com/get-docker/)
 - Install [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 - Install [Google Cloud SDK](https://cloud.google.com/sdk/docs/install)
+- Install [Make](http://gnuwin32.sourceforge.net/packages/make.htm) if running on Windows
 - Create [GCP Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 - Enable [Container Registry API](https://cloud.google.com/container-registry/docs/quickstart)
 - Enable [Cloud Run Admin API](https://cloud.google.com/run/docs/reference/rest)
@@ -25,4 +26,6 @@ cd "CLOUD RUN DOCKER FLASK APP"
 gcloud auth login
 ```
 4. Run Make Command Build and Push Container and Deploy to Cloud Run with Terraform
+```cmd
+make webapp
 ```
