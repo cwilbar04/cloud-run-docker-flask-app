@@ -9,7 +9,7 @@
   <ul>
     <li><a href="{{ url_for('home')}}">Home Page</a></li>
     <li><a class="active" href="{{ url_for('InsertText')}}">Insert Text</a></li>
-    <li style="float: right;"><a href="https://github.com/cwilbar04/spark-container">Github</a></li>
+    <li style="float: right;"><a href="https://github.com/cwilbar04/cloud-run-docker-flask-app">Github</a></li>
 	</ul>
   
   <br><br><br><br>
@@ -19,7 +19,11 @@
   <br><br><br>
 
   <form action="/InsertText" method = "POST">
-      <p>Insert Text <input type = "text" name = "Text_Input" /></p>
+    <p>
+    <textarea id="Text_Input" name = "Text_Input" rows="6" cols="100">
+      Insert text here!
+      </textarea>
+      </p>
       <p><input type = "submit" value = "submit" /></p>
   </form>
 
