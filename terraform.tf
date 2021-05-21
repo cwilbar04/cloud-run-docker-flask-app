@@ -1,7 +1,7 @@
 # Define Variable based on TF_VAR environment variable set
 variable "GOOGLE_CLOUD_PROJECT" {
-    type        = string
-    description = "Google Cloud Project to Deploy to. It must be set as an environment variable: TF_VAR_GOOGLE_CLOUD_PROJECT"
+  type        = string
+  description = "Google Cloud Project to Deploy to. It must be set as an environment variable: TF_VAR_GOOGLE_CLOUD_PROJECT"
 }
 
 # Configure GCP project
@@ -28,9 +28,9 @@ resource "google_cloud_run_service" "google-sentiment-analysis-webapp" {
 
 # Enable public access on Cloud Run service
 resource "google_cloud_run_service_iam_member" "allUsers" {
-  location    = google_cloud_run_service.google-sentiment-analysis-webapp.location
-  project     = google_cloud_run_service.google-sentiment-analysis-webapp.project
-  service     = google_cloud_run_service.google-sentiment-analysis-webapp.name
+  location = google_cloud_run_service.google-sentiment-analysis-webapp.location
+  project  = google_cloud_run_service.google-sentiment-analysis-webapp.project
+  service  = google_cloud_run_service.google-sentiment-analysis-webapp.name
   role     = "roles/run.invoker"
   member   = "allUsers"
 }
