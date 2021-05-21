@@ -9,17 +9,6 @@ provider "google" {
   project = var.GOOGLE_CLOUD_PROJECT
 }
 
-# Configure Terraform Cloud Backend
-backend "remote" {
-  # The name of your Terraform Cloud organization.
-  organization = "CWILBAR"
-
-  # The name of the Terraform Cloud workspace to store Terraform state files in.
-  workspaces {
-    name = "cloud-run-docker-flask-app"
-  }
-}
-
 # Deploy image to Cloud Run
 resource "google_cloud_run_service" "google-sentiment-analysis-webapp" {
   name     = "google-sentiment-analysis-webapp"
