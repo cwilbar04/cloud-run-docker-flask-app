@@ -1,12 +1,22 @@
 # Define Variable based on TF_VAR environment variable set
 variable "GOOGLE_CLOUD_PROJECT" {
     type        = string
-    description = "Google CLoud Project to Deploy to. It must be set as an environment variable: TF_VAR_GOOGLE_CLOUD_PROJECT"
+    description = "Google Cloud Project to Deploy to. It must be set as an environment variable: TF_VAR_GOOGLE_CLOUD_PROJECT"
 }
 
 # Configure GCP project
 provider "google" {
   project = var.GOOGLE_CLOUD_PROJECT
+}
+
+backend "remote" {
+  # The name of your Terraform Cloud organization.
+  organization = "CWILBAR"
+
+  # The name of the Terraform Cloud workspace to store Terraform state files in.
+  workspaces {
+    name = "cloud-run-docker-flask-app"
+  }
 }
 
 # Deploy image to Cloud Run
