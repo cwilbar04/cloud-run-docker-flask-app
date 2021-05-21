@@ -9,6 +9,7 @@ provider "google" {
   project = var.GOOGLE_CLOUD_PROJECT
 }
 
+# Configure Terraform Cloud Backend
 backend "remote" {
   # The name of your Terraform Cloud organization.
   organization = "CWILBAR"
