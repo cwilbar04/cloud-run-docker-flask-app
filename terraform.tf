@@ -5,7 +5,7 @@ variable "GOOGLE_CLOUD_PROJECT" {
 }
 
 variable "CONTAINER_TAG" {
-  default = "latest"
+  description = "Tag for container. Ideally set in github action"
 }
 
 # Configure GCP project
