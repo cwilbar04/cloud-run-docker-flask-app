@@ -4,7 +4,7 @@ variable "GOOGLE_CLOUD_PROJECT" {
   description = "Google Cloud Project to Deploy to. It must be set as an environment variable: TF_VAR_GOOGLE_CLOUD_PROJECT"
 }
 
-variable "CONTAINER_TAG"{
+variable "CONTAINER_TAG" {
   default = "latest"
 }
 
