@@ -36,6 +36,9 @@ on:
     - main
   pull_request:
 
+env:
+  TF_VAR_GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_CLOUD_PROJECT }}
+
 jobs:
   terraform:
     name: 'Terraform'

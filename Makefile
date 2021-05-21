@@ -8,6 +8,7 @@ install:
 test:
 	cd tests
 	python -m pytest -vv
+	terraform fmt -check
 
 lint:
 	python -m pylint --disable=R,C tests webapp
