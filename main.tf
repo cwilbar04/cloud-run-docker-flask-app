@@ -1,5 +1,5 @@
 # Configure Terraform Cloud Backend
-terraform{
+terraform {
     backend "remote" {
     # The name of your Terraform Cloud organization.
     organization = "CWILBAR"
@@ -8,5 +8,5 @@ terraform{
     workspaces {
         name = "cloud-run-docker-flask-app"
     }
-    }s
+    }
 }
