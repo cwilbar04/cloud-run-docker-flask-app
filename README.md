@@ -1,6 +1,6 @@
 ## Simple Flask Container Webapp Deployed to Cloud Run
 
-https://google-sentiment-analysis-webapp-sieipuyd7a-uc.a.run.app/
+https://google-sentiment-analysis-webapp-sieipuyd7a-uc.a.run.app
 
 Requirements:
 - Install and Run [Docker](https://docs.docker.com/get-docker/)
