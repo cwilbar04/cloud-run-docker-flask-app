@@ -4,9 +4,19 @@ variable "GOOGLE_CLOUD_PROJECT" {
   description = "Google Cloud Project to Deploy to. It must be set as an environment variable: TF_VAR_GOOGLE_CLOUD_PROJECT"
 }
 
+variable "CONTAINER_TAG"{
+  default = "latest"
+}
+
 # Configure GCP project
 provider "google" {
   project = var.GOOGLE_CLOUD_PROJECT
+}
+
+
+data "google_container_registry_image" "myapp_tagged" {
+  name = "google-sentiment-analysis-webapp"
+  tag  = var.CONTAINER_TAG
 }
 
 # Deploy image to Cloud Run
@@ -16,7 +26,7 @@ resource "google_cloud_run_service" "google-sentiment-analysis-webapp" {
   template {
     spec {
       containers {
-        image = "gcr.io/${var.GOOGLE_CLOUD_PROJECT}/google-sentiment-analysis-webapp"
+        image = data.google_container_registry_image.myapp_tagged.image_url
       }
     }
   }
