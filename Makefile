@@ -24,9 +24,13 @@ venv: venv_create venv_activate
 container_build:
 	docker build -t google-sentiment-analysis-webapp .
 
-container_push:
+container_push_gcr:
 	docker tag google-sentiment-analysis-webapp:latest gcr.io/${TF_VAR_GOOGLE_CLOUD_PROJECT}/google-sentiment-analysis-webapp:latest
 	docker push gcr.io/${TF_VAR_GOOGLE_CLOUD_PROJECT}/google-sentiment-analysis-webapp:latest
+
+container_push_dockerhub:
+	docker tag google-sentiment-analysis-webapp:latest cwilbar04/google-sentiment-analysis-webapp:latest
+	docker push cwilbar04/google-sentiment-analysis-webapp:latest
 
 container_terraform:
 	terraform init
