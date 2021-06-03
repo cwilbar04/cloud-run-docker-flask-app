@@ -1,0 +1,11 @@
+# Configure AWS Credentials
+aws configure
+
+# Create Repository
+aws ecr create-repository --repository-name=google-sentiment-analysis-webapp --region=us-east-2
+
+# Authenticate to docker login
+aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 077817011377.dkr.ecr.us-east-2.amazonaws.com
+
+# Tag and push Container
+make container_push_ecr

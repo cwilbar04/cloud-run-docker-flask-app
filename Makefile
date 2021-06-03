@@ -1,6 +1,3 @@
-# set_project:
-# 	$Env:GOOGLE_CLOUD_PROJECT = "simple-webapp-313702"
-
 install:
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
@@ -25,12 +22,16 @@ container_build:
 	docker build -t google-sentiment-analysis-webapp .
 
 container_push_gcr:
-	docker tag google-sentiment-analysis-webapp:latest gcr.io/${TF_VAR_GOOGLE_CLOUD_PROJECT}/google-sentiment-analysis-webapp:latest
-	docker push gcr.io/${TF_VAR_GOOGLE_CLOUD_PROJECT}/google-sentiment-analysis-webapp:latest
+	docker tag google-sentiment-analysis-webapp:latest gcr.io/${GOOGLE_CLOUD_PROJECT}/google-sentiment-analysis-webapp:latest
+	docker push gcr.io/${GOOGLE_CLOUD_PROJECT}/google-sentiment-analysis-webapp:latest
 
 container_push_dockerhub:
-	docker tag google-sentiment-analysis-webapp:latest cwilbar04/google-sentiment-analysis-webapp:latest
-	docker push cwilbar04/google-sentiment-analysis-webapp:latest
+	docker tag google-sentiment-analysis-webapp:latest ${DOCKERHUB_ACCOUNT}/google-sentiment-analysis-webapp:latest
+	docker push ${DOCKERHUB_ACCOUNT}/google-sentiment-analysis-webapp:latest
+
+container_push_ecr:
+	docker tag google-sentiment-analysis-webapp:latest 077817011377.dkr.ecr.us-east-2.amazonaws.com/google-sentiment-analysis-webapp:latest
+	docker push  077817011377.dkr.ecr.us-east-2.amazonaws.com/google-sentiment-analysis-webapp:latest
 
 container_terraform:
 	terraform init
