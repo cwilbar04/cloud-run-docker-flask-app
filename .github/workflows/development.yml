@@ -18,6 +18,7 @@ jobs:
     name: Build and Push Docker
     runs-on: ubuntu-latest
 
+    # Define Environment to use Appropriate Secrets
     environment:
       name: development
 
@@ -53,7 +54,8 @@ jobs:
     name: 'Deploy Webapp Using Terraform'
     needs: build-push-docker
     runs-on: ubuntu-latest
-
+    
+    # Define Environment to use Appropriate Secrets
     environment:
       name: development
 

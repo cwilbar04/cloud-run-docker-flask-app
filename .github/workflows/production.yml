@@ -24,6 +24,7 @@ jobs:
     name: Build and Push Docker
     runs-on: ubuntu-latest
 
+    # Define Environment to use Appropriate Secrets
     environment:
       name: production
 
@@ -60,6 +61,7 @@ jobs:
     needs: build-push-docker
     runs-on: ubuntu-latest
 
+    # Define Environment to use Appropriate Secrets
     environment:
       name: production
 
