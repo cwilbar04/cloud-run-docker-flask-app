@@ -82,10 +82,6 @@ jobs:
     - name: Terraform Format
       run: terraform fmt -check
 
-    # Switch to correct workspace
-    - name: Terraform Workspace
-      run: terraform workspace select dev
-
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan       
