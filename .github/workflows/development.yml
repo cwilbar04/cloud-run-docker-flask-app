@@ -81,6 +81,7 @@ jobs:
     - name: Terraform Format
       run: terraform fmt -check
 
+    # Set GITHUB SHA as Environment Variable for Tenserflow
     - name: Set env
       run: echo "TF_VAR_CONTAINER_TAG=$(echo $GITHUB_SHA)" >> $GITHUB_ENV
 
