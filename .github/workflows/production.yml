@@ -60,7 +60,7 @@ jobs:
 
     environment:
       name: production
-      
+
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
@@ -84,6 +84,10 @@ jobs:
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
       run: terraform fmt -check
+
+    # Switch to correct workspace
+    - name: Terraform Workspace
+      run: terraform workspace select prod
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
