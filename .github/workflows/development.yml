@@ -2,12 +2,8 @@ name: Deploy Webapp
 
 on:
   push:
-    # Publish `main` as `latest` image.
     branches:
-      - main
-
-  # Run tests for any PRs.
-  pull_request:
+      - dev_cw
 
 env:
   # TODO: Change variable to your image name.
@@ -21,6 +17,10 @@ jobs:
   build-push-docker:
     name: Build and Push Docker
     runs-on: ubuntu-latest
+
+    environment:
+      name: development
+
     steps:
 
     - name: Checkout
@@ -53,6 +53,9 @@ jobs:
     name: 'Deploy Webapp Using Terraform'
     needs: build-push-docker
     runs-on: ubuntu-latest
+
+    environment:
+      name: development
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:

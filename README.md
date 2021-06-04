@@ -32,3 +32,5 @@ gcloud auth login
 ```cmd
 make webapp
 ```
+
+Deploying to Dev will Deploy to My Dev Google Cloud Project. Deploying to Main will Deploy to My Prod Google Cloud Project.
