@@ -11,6 +11,7 @@ env:
   PROJECT_ID: ${{ secrets.GOOGLE_CLOUD_PROJECT }}
   TF_VAR_GOOGLE_CLOUD_PROJECT: ${{ secrets.GOOGLE_CLOUD_PROJECT }}
   TF_VAR_CONTAINER_TAG: $GITHUB_SHA
+  TF_WORKSPACE: dev
   GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_ACCOUNT_CREDENTIALS }}
 
 jobs:
@@ -84,7 +85,7 @@ jobs:
     # Switch to correct workspace
     - name: Terraform Workspace
       run: terraform workspace select dev
-      
+
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan       
