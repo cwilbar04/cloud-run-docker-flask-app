@@ -87,6 +87,10 @@ jobs:
     - name: Terraform Format
       run: terraform fmt -check
 
+    # Set GITHUB SHA as Environment Variable for Terraform Use
+    - name: Set env
+      run: echo "TF_VAR_CONTAINER_TAG=$(echo $GITHUB_SHA)" >> $GITHUB_ENV
+      
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan       
