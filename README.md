@@ -1,5 +1,6 @@
 ## Simple Flask Container Webapp Deployed to Cloud Run
-![Deploy Webapp](https://github.com/cwilbar04/cloud-run-docker-flask-app/actions/workflows/workflow.yml/badge.svg)
+![Deploy Webapp Development](https://github.com/cwilbar04/cloud-run-docker-flask-app/actions/workflows/development.yml/badge.svg)
+![Deploy Webapp Production](https://github.com/cwilbar04/cloud-run-docker-flask-app/actions/workflows/production.yml/badge.svg)
 
 https://google-sentiment-analysis-webapp-sieipuyd7a-uc.a.run.app
 
