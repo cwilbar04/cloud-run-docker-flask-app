@@ -30,8 +30,8 @@ container_push_dockerhub:
 	docker push ${DOCKERHUB_ACCOUNT}/google-sentiment-analysis-webapp:latest
 
 container_push_ecr:
-	docker tag google-sentiment-analysis-webapp:latest 077817011377.dkr.ecr.us-east-2.amazonaws.com/google-sentiment-analysis-webapp:latest
-	docker push  077817011377.dkr.ecr.us-east-2.amazonaws.com/google-sentiment-analysis-webapp:latest
+	docker tag google-sentiment-analysis-webapp:latest ${AMAZON_ACCOUNT_ID}.dkr.ecr.us-east-2.amazonaws.com/google-sentiment-analysis-webapp:latest
+	docker push  ${AMAZON_ACCOUNT_ID}.dkr.ecr.us-east-2.amazonaws.com/google-sentiment-analysis-webapp:latest
 
 container_terraform:
 	terraform init

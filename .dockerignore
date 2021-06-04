@@ -17,3 +17,5 @@ coverage.xml
 .git
 .terraform
 .github
+set_environment
+aws_commands

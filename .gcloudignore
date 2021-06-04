@@ -19,3 +19,5 @@
 __pycache__/
 # Ignored by the build system
 /setup.cfg
+set_environment
+aws_commands

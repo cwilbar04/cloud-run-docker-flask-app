@@ -32,5 +32,3 @@ gcloud auth login
 ```cmd
 make webapp
 ```
-
-small change
