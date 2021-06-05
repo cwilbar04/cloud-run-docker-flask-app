@@ -1,5 +1,5 @@
 set_environment
-aws_commands
+/aws
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
