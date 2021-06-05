@@ -1,4 +1,4 @@
-name: Deploy Webapp
+name: Development Deploy Webapp
 
 on:
   push:
